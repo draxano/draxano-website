@@ -13,7 +13,7 @@ const About: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20 items-start">
           <div className="col-span-1">
             <div className="aspect-square rounded-[40px] overflow-hidden bg-brand-card border border-white/10 mb-6">
-              <img src="/assets/about-me.png" alt={global.name} className="w-full h-full object-cover" />
+              <img src="/assets/about-me.jpg" alt={global.name} className="w-full h-full object-cover" loading="lazy" />
             </div>
             <div className="space-y-4">
               <div className="flex items-center gap-3 text-brand-muted">
