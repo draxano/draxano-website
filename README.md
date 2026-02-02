@@ -1,105 +1,100 @@
-# Draxano Website
+# Murad Alaskarov — Personal Website
 
-A modern, responsive React website built with Vite, following **Clean Architecture** principles.
+A modern, minimal portfolio website built with React, TypeScript, and Tailwind CSS.
 
-## Features
+## Tech Stack
 
-- 🏠 **Home Page** - Welcome page with hero section
-- 👤 **About Page** - Personal information and introduction
-- 💼 **Projects Page** - Showcase your projects with descriptions and technologies
-- ✍️ **Writings Page** - Display your writings in PDF format
-- 📧 **Contact Section** - Contact form for visitors to reach out
-- 🔗 **Socials Section** - Links to your social media profiles
-
-## Architecture
-
-This project follows **Clean Architecture** principles with clear separation of concerns:
-
-- **Domain Layer**: Business entities and core logic
-- **Application Layer**: Use cases and business services
-- **Infrastructure Layer**: Data access and external services
-- **Presentation Layer**: React components and UI
-- **Shared Layer**: Utilities and constants
-
-See [ARCHITECTURE.md](./ARCHITECTURE.md) for detailed architecture documentation.
-
-## Project Structure
-
-```
-src/
-├── domain/              # Domain entities (Project, Writing, Contact, Social)
-├── application/         # Business services (ProjectService, WritingService, etc.)
-├── infrastructure/      # Data sources, repositories, DI container
-├── presentation/        # React components, pages, hooks, styles
-└── shared/             # Constants and utilities
-```
+- **React 18** with TypeScript
+- **Vite** for fast development and builds
+- **Tailwind CSS** for styling
+- **React Router** for navigation
+- **React Markdown** for content rendering
+- **Lucide React** for icons
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js (v16 or higher)
+- Node.js 18+
 - npm or yarn
 
 ### Installation
 
-1. Install dependencies:
 ```bash
+# Install dependencies
 npm install
-```
 
-2. Start the development server:
-```bash
+# Start development server
 npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-3. Open your browser and navigate to `http://localhost:5173`
+## Project Structure
 
-### Building for Production
+```
+├── components/        # Reusable UI components
+├── content/           # Markdown content files
+│   ├── projects/      # Project descriptions
+│   └── writings/      # Blog posts
+├── pages/             # Page components
+├── public/assets/     # Static assets (images, icons)
+├── utils/             # Utility functions
+├── constants.tsx      # Site content and configuration
+├── types.ts           # TypeScript type definitions
+└── index.tsx          # App entry point
+```
 
-To create a production build:
+## Adding Content
+
+### Projects
+
+Add a new markdown file in `content/projects/`:
+
+```markdown
+---
+id: "1"
+title: "Project Name"
+description: "Brief description"
+imageUrl: "/assets/project-image.png"
+tags: ["React", "TypeScript"]
+link: "#"
+---
+
+Optional extended description...
+```
+
+### Writings
+
+Add a new markdown file in `content/writings/`:
+
+```markdown
+---
+id: "1"
+title: "Article Title"
+excerpt: "Brief summary"
+date: "Feb 2, 2026"
+readTime: "5 min read"
+category: "Tech"
+imageUrl: "/assets/article-image.png"
+---
+
+Article content in markdown...
+```
+
+## Deployment
+
+Build the project and deploy the `dist` folder to any static hosting:
 
 ```bash
 npm run build
 ```
 
-The built files will be in the `dist` directory.
-
-## Customization
-
-### Adding Your PDF Writings
-
-1. Place PDF files in `public/writings/`
-2. Update `src/infrastructure/dataSources/LocalDataSource.js` with your writing data
-3. The writings will automatically appear on the Writings page
-
-### Updating Social Links
-
-Edit `src/shared/constants/socials.js` with your actual social media URLs.
-
-### Customizing Projects
-
-Update the projects array in `src/infrastructure/dataSources/LocalDataSource.js` with your actual project information.
-
-### Styling
-
-All styles are in `src/presentation/styles/`. The color scheme can be customized by modifying the CSS variables in `src/index.css`.
-
-## Technologies Used
-
-- React 18
-- React Router DOM
-- Vite
-- CSS3
-- Clean Architecture principles
-
-## Architecture Benefits
-
-- ✅ **Testable**: Each layer can be tested independently
-- ✅ **Maintainable**: Clear separation of concerns
-- ✅ **Scalable**: Easy to add new features
-- ✅ **Flexible**: Easy to swap implementations (e.g., replace local data with API)
-- ✅ **Framework Independent**: Business logic is independent of React
+Compatible with Vercel, Netlify, GitHub Pages, and other static hosts.
 
 ## License
 
